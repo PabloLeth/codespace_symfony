@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Welcome!</title>
+        
+    </head>
+    <body>
+        <div class="example-wrapper">
+            <h1>Hello {{ myname }}! ✅</h1>
+
+        <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Edad</th>
+            <th>Ciudad</th>
+        </tr>
+    {% for person in people %}
+         <tr>
+             <td>{{person.name}}</td>
+             <td>{{person.email}}</td>
+             <td>{{person.age}}</td>
+             <td>{{person.city}}</td>
+          <td> <a href="{{path('employee_delete', {id:person.id})}}">Eliminar</a></td>
+         </tr>
+           {% endfor %}
+        </div>
+    </body>
+</html>
